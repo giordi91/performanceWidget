@@ -18,7 +18,15 @@ Feel free to contact me for any advice or error report etc.( I am sure there are
 marco(dot)giordano(dot)work(at)gmail(dot)com
 
 ##### IMAGES ######
+
+Cpu-ram
 ![Alt cpu-ram](/doc/images/demoWidget.png)
+
+Bar-painter
 ![Alt bar-painter](/doc/images/performanceSingleBar.png)
+
+Graph-painter
 ![Alt graph-painter](/doc/images/performanceSingleGraph.png)
+
+Graph-painter2
 ![Alt graph-painter2](/doc/images/performanceMultiColorGraph.png)
