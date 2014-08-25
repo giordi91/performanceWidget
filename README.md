@@ -19,18 +19,18 @@ marco(dot)giordano(dot)work(at)gmail(dot)com
 
 ##### IMAGES ######
 
-#Cpu-ram# 
+Cpu-ram
 
 ![Alt cpu-ram](/doc/images/demoWidget.png)
 
-#Bar-painter# 
+Bar-painter
 
 ![Alt bar-painter](/doc/images/performanceSingleBar.png)
 
-#Graph-painter# 
+Graph-painter 
 
 ![Alt graph-painter](/doc/images/performanceSingleGraph.png)
 
-#Graph-painter2# 
+Graph-painter2 
 
 ![Alt graph-painter2](/doc/images/performanceMultiColorGraph.png)
