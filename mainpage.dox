@@ -1,0 +1,106 @@
+/*! \mainpage My Personal Index Page
+ *
+ * \section intro_sec Introduction
+ *
+ * This is a small library I wrote in order to create some "performance" widgets.
+ * What I mean by that is a series of widgets that can show computer performance, like ram usage , cpu usage etc.
+ * I tried to build the library in a way which is a bit flexible and modular and adapt to different type of data.
+ * Beware though this is not a library for data plotting, there are a lot of professional libraries out there to do that.
+ *
+ * \section install_sec Compiling
+ * This library doesnt have any external dependency and is self contained.
+ * At this point it only work on linux since it relies on a /proc/stat file  and other linux specific query.
+ * There will be need to modify che classes to work differently on a OSX or Windows enviroment.
+ *
+ * Here my .pro file if can be usefull
+ *\code
+ *#-------------------------------------------------
+ #
+ # Project created by QtCreator 2014-06-19T10:25:43
+ #
+ #-------------------------------------------------
+
+ QT       += core gui
+
+ greaterThan(QT_MAJOR_VERSION,5)
+ {
+     QT += widgets
+ }
+
+ TARGET = osWidget
+
+ TEMPLATE = app
+
+
+ SOURCES += main.cpp\
+         mainwindow.cpp \
+     painters/performancepainter.cpp \
+     painters/graphpainter.cpp \
+     painters/painterutils.cpp \
+     dataQuery/dataquery.cpp \
+     dataQuery/cpudataquery.cpp \
+     painters/barspainter.cpp \
+     painters/graphmulticolorpainter.cpp \
+     widgets/cpuwidget.cpp \
+     widgets/performancewidget.cpp \
+     dataQuery/queryresource.cpp \
+     widgets/ramwidget.cpp \
+     dataQuery/ramdataquery.cpp
+
+ HEADERS  += mainwindow.h \
+     painterutils.h \
+     performancewidget.h \
+     painters/performancepainter.h \
+     painters/graphpainter.h \
+     painters/painterutils.h \
+     dataQuery/dataquery.h \
+     dataQuery/cpudataquery.h \
+     painters/barspainter.h \
+     painters/graphmulticolorpainter.h \
+     widgets/cpuwidget.h \
+     widgets/performancewidget.h \
+     dataQuery/queryresource.h \
+     widgets/ramwidget.h \
+     dataQuery/ramdataquery.h
+
+ FORMS    += mainwindow.ui
+
+ OTHER_FILES += \
+     mainpage.dox
+ *\endcode
+ *
+ * \subsection usage_sec Usage
+ * As mentioned before in order to give a bit of flexibilty to this library a specific coding pattern has been adopted.
+   A new widgets need to inherit PerformanceWidget class which implements the basic funtionality for the widgets like :
+   \li automatic fetch of the data over time
+   \li automatic call of paint functions
+
+    In order to work the widgets needts two extra components that have to been provided by the user.
+    The first is the dataFetcher which inherit from the abstract class DataQuery.
+    The only goal of this class is to query the data and give it back in a format the widgets is able to use.
+    For example you might want to inherit from this class to create a GpuQuery class.
+
+    The next step is to provide a painter class which only goal is to paint the data it s given to it.
+    You need to inherit from the abstract class PerformancePainter.
+    This means is possible to swap on the fly different type of painters to draw the data in a different way.
+    Different painters have been implemented already like the BarsPainter and the GraphPainter.
+
+    The result of this process are the two subclassed CpuWidget and RamWidget.
+
+   Included a demo application (main.cpp etc) which looks like this :
+
+    @image html demoWidget.png "Demo Widget"
+
+    Showing cpu widget at the top and gpu widget at the bottom.
+
+
+    \subsection contacts_sec Contacts.
+    For any question feel free to write on my github repo :
+
+    Or contact me at :
+    marco(DOT)giordano(DOT)work(AT)gmail(DOT)com
+
+ *
+ * Special thanks to my mentor Francesco Giordana for all the help in developing this tool and
+   Bryan Cairns (VoidRealms on youtube) for his crazy cool series of tutorial in C++ about Qt.
+ */
