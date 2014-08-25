@@ -3,16 +3,16 @@
  * \section intro_sec Introduction
  *
  * This is a small library I wrote in order to create some "performance" widgets.
- * What I mean by that is a series of widgets that can show computer performance, like ram usage , cpu usage etc.
+ * What I mean by that is a series of widgets that can show computer performance, like ram usage , CPU usage etc.
  * I tried to build the library in a way which is a bit flexible and modular and adapt to different type of data.
  * Beware though this is not a library for data plotting, there are a lot of professional libraries out there to do that.
  *
  * \section install_sec Compiling
- * This library doesnt have any external dependency and is self contained.
- * At this point it only work on linux since it relies on a /proc/stat file  and other linux specific query.
- * There will be need to modify che classes to work differently on a OSX or Windows enviroment.
+ * This library doesn't have any external dependency and is self contained.
+ * At this point it only work on Linux since it relies on a /proc/stat file  and other Linux specific query.
+ * There will be need to modify the classes to work differently on a OSX or Windows environment.
  *
- * Here my .pro file if can be usefull
+ * Here my .pro file if can be useful
  *\code
  *#-------------------------------------------------
  #
@@ -70,12 +70,12 @@
  *\endcode
  *
  * \subsection usage_sec Usage
- * As mentioned before in order to give a bit of flexibilty to this library a specific coding pattern has been adopted.
-   A new widgets need to inherit PerformanceWidget class which implements the basic funtionality for the widgets like :
+ * As mentioned before in order to give a bit of flexibility to this library a specific coding pattern has been adopted.
+   A new widgets need to inherit PerformanceWidget class which implements the basic functionality for the widgets like :
    \li automatic fetch of the data over time
    \li automatic call of paint functions
 
-    In order to work the widgets needts two extra components that have to been provided by the user.
+    In order to work the widgets needs two extra components that have to been provided by the user.
     The first is the dataFetcher which inherit from the abstract class DataQuery.
     The only goal of this class is to query the data and give it back in a format the widgets is able to use.
     For example you might want to inherit from this class to create a GpuQuery class.
@@ -85,13 +85,13 @@
     This means is possible to swap on the fly different type of painters to draw the data in a different way.
     Different painters have been implemented already like the BarsPainter and the GraphPainter.
 
-    The result of this process are the two subclassed CpuWidget and RamWidget.
+    The result of this process are the two sub-classed CpuWidget and RamWidget.
 
    Included a demo application (main.cpp etc) which looks like this :
 
     @image html demoWidget.png "Demo Widget"
 
-    Showing cpu widget at the top and gpu widget at the bottom.
+    Showing CPU widget at the top and gpu widget at the bottom.
 
 
     \subsection contacts_sec Contacts.
