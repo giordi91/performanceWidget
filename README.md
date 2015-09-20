@@ -1,5 +1,6 @@
 performanceWidget
 =================
+WARING: THis is an old and most likely crappy project, brace yourself you brave coder that dare to enter
 
 This is a small library I wrote in order to create some "performance" widgets.
 What I mean by that is a series of widgets that can show computer performance, like ram usage , CPU usage etc.
